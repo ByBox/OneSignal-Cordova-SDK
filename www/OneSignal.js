@@ -1,6 +1,6 @@
 /**
  * Modified MIT License
- * 
+ *
  * Copyright 2016 OneSignal
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -9,13 +9,13 @@
  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  * copies of the Software, and to permit persons to whom the Software is
  * furnished to do so, subject to the following conditions:
- * 
+ *
  * 1. The above copyright notice and this permission notice shall be included in
  * all copies or substantial portions of the Software.
- * 
+ *
  * 2. All copies of substantial portions of the Software may only be used in connection
  * with services provided by OneSignal.
- * 
+ *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -37,7 +37,7 @@ var OneSignal = function() {
 OneSignal.prototype.init = function(appId, options, didReceiveRemoteNotificationCallBack) {
     if (didReceiveRemoteNotificationCallBack == null)
         didReceiveRemoteNotificationCallBack = function() {};
-    
+
     options.appId = appId;
     cordova.exec(didReceiveRemoteNotificationCallBack, function(){}, "OneSignalPush", "init", [options]);
 };
@@ -84,12 +84,12 @@ OneSignal.prototype.enableSound = function(enable) {
     cordova.exec(function(){}, function(){}, "OneSignalPush", "enableSound", [enable]);
 };
 
-OneSignal.prototype.enableNotificationsWhenActive = function(enable) {
-    cordova.exec(function(){}, function(){}, "OneSignalPush", "enableNotificationsWhenActive", [enable]);
-};
-
 OneSignal.prototype.enableInAppAlertNotification = function(enable) {
     cordova.exec(function(){}, function(){}, "OneSignalPush", "enableInAppAlertNotification", [enable]);
+};
+
+OneSignal.prototype.enableLocationSharing = function(enable) {
+    cordova.exec(function(){}, function(){}, "OneSignalPush", "enableLocationSharing", [enable]);
 };
 
 OneSignal.prototype.setSubscription = function(enable) {
