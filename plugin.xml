@@ -74,6 +74,13 @@
       </array>
     </config-file>
 
+    <config-file target="*-Debug.plist" parent="aps-environment">
+       <string>development</string>
+     </config-file>
+     <config-file target="*-Release.plist" parent="aps-environment">
+       <string>production</string>
+    </config-file>
+
     <source-file src="src/ios/OneSignal.m" />
     <source-file src="src/ios/OneSignalHTTPClient.m" />
     <source-file src="src/ios/OneSignalTrackIAP.m" />
