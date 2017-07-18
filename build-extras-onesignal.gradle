@@ -5,3 +5,13 @@ android.defaultConfig {
                           onesignal_app_id: "", // Use from code for now.
                           onesignal_google_project_number: ""]
 }
+
+repositories{
+  flatDir{
+      dirs 'libs'
+   }
+}
+
+dependencies {
+   compile(name:'onesignal', ext:'aar')
+}
